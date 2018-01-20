@@ -13,9 +13,9 @@
 
         if ($found_user) {
             $response["success"] = true;  
-            $response["username"] = $found_user['username'];
+            $response["id"] = $found_user['id'];
             $response["name"] = $found_user['shopname'];
-            $response["age"] = $found_user['gstNo'];
+            $response["username"] = $found_user['username'];
         }
     }
 

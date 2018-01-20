@@ -5,14 +5,14 @@
     $response = array();
     $response["success"] = false;
 
-    if ($_POST['username']!=""&&$_POST['password']!=""&&$_POST['age']!=""&&$_POST['name']!="") {
+    if ($_POST['username']!=""&&$_POST['name']!=""&&$_POST['password']!=""&&$_POST['phno']!="") {
         $username = mysql_prep($_POST['username']); 
-        $name = mysql_prep($_POST['name']); 
+        $shopname = mysql_prep($_POST['name']); 
         $hashed_password = password_encrypt($_POST['password']);
-        $age = mysql_prep($_POST['age']);
+        $phno = mysql_prep($_POST['phno']);
         
-        $query = "INSERT INTO users (username, shopname, hashed_password, gstNo)";
-        $query .= " VALUES ('{$username}', '{$shopname}', '{$hashed_password}', '{$gstNo}')";
+        $query = "INSERT INTO users (username, shopname, hashed_password, phno)";
+        $query .= " VALUES ('{$username}', '{$shopname}', '{$hashed_password}', '{$phno}')";
         $result = mysqli_query($conn, $query);
         confirm_query($result);
 
